@@ -41,7 +41,7 @@ int main() {
                 std::cout << "Invalid choice!\n";
         }
 
-    } while(choice != 2);
+    } while(choice != 5);
 
     return 0;
 }

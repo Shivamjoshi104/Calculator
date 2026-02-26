@@ -35,7 +35,7 @@ public:
     void sub(){
         int sub =0;
         for ( auto i : nums){
-            sub -=i;
+            sub =-sub+i;
         }
         std::cout<<"Subtraction = "<< -(sub)<<std::endl;
     };
@@ -50,7 +50,7 @@ public:
     void div(){
         double div = 1;
         for(auto i : nums){
-            div /=i;
+            div =div / i;
         }
         std::cout<<"div = "<< div<< std::endl;
     };
