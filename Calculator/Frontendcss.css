@@ -1,0 +1,12 @@
+body{
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0f0f0f;
+}
+.Calculator{
+    background: black ;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+}
