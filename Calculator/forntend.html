@@ -1,43 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcy</title>
     <link rel="stylesheet" href="Frontendcss.css">
 </head>
+
 <body>
-    <div class ="Calculator">
-        <div class ="button">
-            <button>=</button>  
-            <button>Calculator</button>   
-            <button> ( </button>
-            <button> ) </button>       
-            <button onclick="storeNumber(0)">0</button>
-            <button onclick="storeNumber(1)">1</button>
-            <button onclick="storeNumber(2)">2</button>
-            <button onclick="storeNumber(3)">3</button>
-            <button onclick="storeNumber(4)">4</button>
-            <button onclick="storeNumber(5)">5</button>
-            <button onclick="storeNumber(6)">6</button>
-            <button onclick="storeNumber(7)">7</button>
-            <button onclick="storeNumber(8)">8</button>
-            <button onclick="storeNumber(9)">9</button>
-            <button onclick="storeOperator('+')">+</button>
-            <button onclick="storeOperator('-')">-</button>
-            <button onclick="storeOperator('*')">*</button>
-            <button onclick="storeOperator('/')">/</button>
-            <button onclick="storeOperator('^')">**</button>
-             
-            
-            
-
-
-
-            
-
-        </div>
+    <div class="display">
+        <input type="text" id="screen" readonly placeholder="0">
     </div>
-    
+    <div class="button">
+        <button>(</button>
+        <button>)</button>
+        <button onclick="clearScreen()">C</button>
+        <button onclick="deleteLast()">DEL</button>
+
+        <button onclick="storeNumber(7)">7</button>
+        <button onclick="storeNumber(8)">8</button>
+        <button onclick="storeNumber(9)">9</button>
+        <button onclick="storeOperator('/')">/</button>
+
+        <button onclick="storeNumber(4)">4</button>
+        <button onclick="storeNumber(5)">5</button>
+        <button onclick="storeNumber(6)">6</button>
+        <button onclick="storeOperator('*')">*</button>
+
+        <button onclick="storeNumber(1)">1</button>
+        <button onclick="storeNumber(2)">2</button>
+        <button onclick="storeNumber(3)">3</button>
+        <button onclick="storeOperator('-')">-</button>
+
+        <button onclick="storeNumber(0)">0</button>
+        <button onclick="storeNumber('.')">.</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="storeOperator('+')">+</button>
+    </div>
+
+
 </body>
+
 </html>
