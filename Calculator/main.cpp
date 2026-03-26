@@ -41,6 +41,7 @@ int main() {
         }
 
     } while(choice != 5);
+    
     int storenumber(int num){
         int x= num;
     }
