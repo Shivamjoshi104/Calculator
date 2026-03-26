@@ -4,7 +4,6 @@
 int main() {
     Basic b;
     int choice;
-
     do {
         std::cout << "\n----- MENU -----\n";
         std::cout << "1. Addition\n";
@@ -42,6 +41,12 @@ int main() {
         }
 
     } while(choice != 5);
+    int storenumber(int num){
+        int x= num;
+    }
+    int storeOperator(char operator){
+        char x = operator;
+    }
 
     return 0;
 }
