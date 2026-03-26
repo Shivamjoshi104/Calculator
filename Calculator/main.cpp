@@ -42,12 +42,7 @@ int main() {
 
     } while(choice != 5);
     
-    int storenumber(int num){
-        int x= num;
-    }
-    int storeOperator(char operator){
-        char x = operator;
-    }
+    
 
     return 0;
 }
