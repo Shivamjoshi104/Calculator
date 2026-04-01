@@ -1,59 +1,40 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
-#include <vector>
 #include <iostream>
 
 class Basic {
 private:
-    std::vector<int> nums;
+    double num1;
+    double num2;
 
 public:
     void input() {
-        int n;
-        nums.clear();
-
-        std::cout << "Enter numbers (-1 to stop): ";
-        while (true) {
-            std::cin >> n;
-            if (n == -1)
-                break;
-            nums.push_back(n);
-        }
+        std::cout << "Enter first number: ";
+        std::cin >> num1;
+        std::cout << "Enter second number: ";
+        std::cin >> num2;
     }
 
-    void add() {
-        int sum = 0;
-
-        for (int i : nums) {
-            sum += i;
-        }
-
-        std::cout << "Sum = " << sum << std::endl;
+    void add() const {
+        std::cout << "Result: " << (num1 + num2) << std::endl;
     }
 
-    void sub(){
-        int sub =0;
-        for ( auto i : nums){
-            sub =-sub+i;
-        }
-        std::cout<<"Subtraction = "<< -(sub)<<std::endl;
-    };
-    void mul(){
-        double multiplication = 1;
-        for(auto i : nums){
-            multiplication*=i;
+    void sub() const {
+        std::cout << "Result: " << (num1 - num2) << std::endl;
+    }
 
+    void mul() const {
+        std::cout << "Result: " << (num1 * num2) << std::endl;
+    }
+
+    void div() const {
+        if (num2 == 0) {
+            std::cout << "Error: Division by zero is not allowed." << std::endl;
+            return;
         }
-        std::cout<<"Multiplication = "<< multiplication<< std::endl;
-    };
-    void div(){
-        double div = 1;
-        for(auto i : nums){
-            div =div / i;
-        }
-        std::cout<<"div = "<< div<< std::endl;
-    };
+        std::cout << "Result: " << (num1 / num2) << std::endl;
+    }
 };
 
 #endif
