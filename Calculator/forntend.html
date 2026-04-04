@@ -1,48 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calcy</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="Frontendcss.css">
 </head>
-
 <body>
-    <div class="display">
-        <input type="text" id="screen" readonly placeholder="0">
-    </div>
-    <div class="button">
-        <button>(</button>
-        <button>)</button>
-        <button onclick="calculate()">=</button>
+    <div class="calculator">
+        <div class="display">
+            <input type="text" id="screen" readonly placeholder="0">
+        </div>
+        <div class="buttons">
+            <button class="clear" onclick="clearScreen()">C</button>
+            <button class="operator" onclick="deleteLast()">DEL</button>
+            <button class="operator" onclick="storeOperator('/')">÷</button>
+            <button class="operator" onclick="storeOperator('*')">×</button>
 
-        <button onclick="clearScreen()">C</button>
-        <button onclick="deleteLast()">DEL</button>
+            <button onclick="storeNumber(7)">7</button>
+            <button onclick="storeNumber(8)">8</button>
+            <button onclick="storeNumber(9)">9</button>
+            <button class="operator" onclick="storeOperator('-')">-</button>
 
-        <button onclick="storeNumber(7)">7</button>
-        <button onclick="storeNumber(8)">8</button>
-        <button onclick="storeNumber(9)">9</button>
-        <button onclick="storeOperator('/')">/</button>
+            <button onclick="storeNumber(4)">4</button>
+            <button onclick="storeNumber(5)">5</button>
+            <button onclick="storeNumber(6)">6</button>
+            <button class="operator" onclick="storeOperator('+')">+</button>
 
-        <button onclick="storeNumber(4)">4</button>
-        <button onclick="storeNumber(5)">5</button>
-        <button onclick="storeNumber(6)">6</button>
-        <button onclick="storeOperator('*')">pow</button>
+            <button onclick="storeNumber(1)">1</button>
+            <button onclick="storeNumber(2)">2</button>
+            <button onclick="storeNumber(3)">3</button>
+            <button class="operator" onclick="calculatePercent()">%</button>
 
-        <button onclick="storeNumber(1)">1</button>
-        <button onclick="storeNumber(2)">2</button>
-        <button onclick="storeNumber(3)">3</button>
-        <button onclick="storeOperator('+')">+</button>
-        <button onclick="storeOperator('-')">-</button>
-
-        <button onclick="storeNumber(0)">0</button>
-        <button onclick="storeNumber('.')">.</button>
-         <button onclick="storeOperator('=')">=</button>
-       
+            <button onclick="storeNumber(0)" class="zero">0</button>
+            <button onclick="storeNumber('.')">.</button>
+            <button class="equal" onclick="calculate()">=</button>
+        </div>
     </div>
 
+    <script>
+        let display = document.getElementById('screen');
+        let expression = '';
 
+        function storeNumber(num) {
+            expression += num;
+            display.value = expression;
+        }
+
+        function storeOperator(op) {
+            if (op === '=') {
+                calculate();
+            } else if (expression !== '') {
+                expression += op;
+                display.value = expression;
+            }
+        }
+
+        function clearScreen() {
+            expression = '';
+            display.value = '0';
+        }
+
+        function deleteLast() {
+            expression = expression.slice(0, -1);
+            display.value = expression || '0';
+        }
+
+        function calculatePercent() {
+            try {
+                let result = eval(expression) / 100;
+                display.value = result;
+                expression = result.toString();
+            } catch (error) {
+                display.value = 'Error';
+                expression = '';
+            }
+        }
+
+        function calculate() {
+            try {
+                let result = eval(expression);
+                display.value = result;
+                expression = result.toString();
+            } catch (error) {
+                display.value = 'Error';
+                expression = '';
+            }
+        }
+
+        display.value = '0';
+    </script>
 </body>
-
 </html>
